@@ -10,16 +10,14 @@ class App extends Component {
     super(props);
     this.state = {displaySidebar: true};
   }
+
   render() {
     const displaySidebar = this.state.displaySidebar;
-    let sidebar = null;
-    if (displaySidebar) {
-      sidebar = <Sidebar/>
-    }
+
     return (
       <div className="App">
         <Header />
-        {sidebar}
+        {displaySidebar && <Sidebar />}
         <Event />
       </div>
     );
