@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import Event from './components/Event.js';
+import Events from './components/Events.js';
 import Header from './components/Header.js';
 import Sidebar from './components/Sidebar.js';
 
@@ -18,7 +18,7 @@ class App extends Component {
       <div className="App">
         <Header />
         {displaySidebar && <Sidebar />}
-        <Event />
+        <Events />
       </div>
     );
   }
