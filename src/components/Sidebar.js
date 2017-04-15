@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class Sidebar extends Component {
   constructor(props) {
     super(props);
-    this.state = {display: true};
   }
   componentDidMount() {
 
@@ -16,8 +15,7 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="Sidebar">
-      <p>{this.state.display}</p>
-        <h3>Stats</h3>
+        <h3>Sidebar: Stats</h3>
         <ul>
           <li>Steps taken</li>
           <li>Hotel departure time</li>
