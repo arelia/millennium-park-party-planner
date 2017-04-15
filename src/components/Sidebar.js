@@ -3,29 +3,20 @@ import React, { Component } from 'react';
 class Sidebar extends Component {
   constructor(props) {
     super(props);
-    this.state = {date: new Date()};
+    this.state = {display: true};
   }
   componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
+
   }
 
   componentWillUnmount() {
-    clearInterval(this.timerID);
-  }
 
-  tick() {
-    this.setState({
-      date: new Date()
-    });
   }
 
   render() {
     return (
       <div className="Sidebar">
-        <h2>{this.state.date.toLocaleTimeString()}</h2>
+      <p>{this.state.display}</p>
         <h3>Stats</h3>
         <ul>
           <li>Steps taken</li>
