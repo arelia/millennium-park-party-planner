@@ -33,7 +33,7 @@ class Events extends Component {
         <p>{event.date}</p>
         <p>{event.location}</p>
         <p>{event.description}</p>
-        <img src={event.image} alt={`image of ${event.name}`}/>
+        <img src={event.image} alt={event.name}/>
       </li>
     );
 
