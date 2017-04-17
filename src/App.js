@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import Events from './components/Events.js';
+import EventsForm from './components/EventsForm.js';
 import Header from './components/Header.js';
 import Sidebar from './components/Sidebar.js';
 
@@ -19,6 +20,7 @@ class App extends Component {
         <Header />
         {displaySidebar && <Sidebar />}
         <Events />
+        <EventsForm addEvent={this.addEvent} />
       </div>
     );
   }
