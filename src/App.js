@@ -9,7 +9,21 @@ import Sidebar from './components/Sidebar.js';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {displaySidebar: true};
+
+    this.addEvent = this.addEvent.bind(this);
+    this.state = {
+      displaySidebar: true,
+      eventsList: {}
+    };
+  }
+
+  addEvent(newEvent) {
+    const eventsList = {...this.state.eventsList};
+    const timestamp = Date.now();
+
+    eventsList[`event-${timestamp}`] = newEvent;
+
+    this.setState({eventsList});
   }
 
   render() {

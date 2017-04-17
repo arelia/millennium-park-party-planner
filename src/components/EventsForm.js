@@ -8,7 +8,7 @@ class EventsForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("handling it");
+
     const newEvent = {
       name: this.name.value,
       date: this.date.value,
@@ -16,9 +16,8 @@ class EventsForm extends Component {
       description: this.description.value,
       image_url: this.image_url.value
     }
-    this.setState({addEvent: newEvent});
+    this.props.addEvent(newEvent);
     this.eventForm.reset();
-    // create ID
   }
 
   render() {
