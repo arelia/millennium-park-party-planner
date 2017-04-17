@@ -5,16 +5,29 @@ import Events from './components/Events.js';
 import EventsForm from './components/EventsForm.js';
 import Header from './components/Header.js';
 import Sidebar from './components/Sidebar.js';
+import base from './base.js'
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.addEvent = this.addEvent.bind(this);
+
     this.state = {
       displaySidebar: true,
       eventsList: {}
     };
+  }
+
+  componentWillMount() {
+    this.ref = base.syncState(
+      `eventsList`,
+      { context: this, state: 'eventsList'}
+    );
+  }
+
+  compoentWillUnmount(){
+    base.removeBinding(this.ref);
   }
 
   addEvent(newEvent) {
