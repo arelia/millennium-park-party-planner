@@ -28,12 +28,13 @@ class App extends Component {
 
   render() {
     const displaySidebar = this.state.displaySidebar;
+    const eventsList = this.state.eventsList;
 
     return (
       <div className="App">
         <Header />
         {displaySidebar && <Sidebar />}
-        <Events />
+        <Events eventsList={eventsList} />
         <EventsForm addEvent={this.addEvent} />
       </div>
     );

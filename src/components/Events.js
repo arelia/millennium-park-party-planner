@@ -1,45 +1,24 @@
 import React, { Component } from 'react';
 
 class Events extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      events: [
-        {
-          id: 263717,
-          name: "Women in Tech Party",
-          date: "3/8/17",
-          location: "Indeed",
-          description: "A party for women",
-          image: "http://www.google.com/image.jpg"
-        },
-        {
-          id: 263718,
-          name: "Men in Tech Party",
-          date: "3/12/17",
-          location: "PBS",
-          description: "A party for men",
-          image: "http://www.google.com/image.jpg"
-        }
-      ]
-    }
-  }
   render() {
-    const events = this.state.events;
-    const listEvents = events.map(
-      (event) =>
-      <li key={event.id}>
-        <h2>{event.name}</h2>
-        <p>{event.date}</p>
-        <p>{event.location}</p>
-        <p>{event.description}</p>
-        <img src={event.image} alt={event.name}/>
-      </li>
-    );
+    const eventsList = this.props.eventsList;
+
+    const eventItems = Object
+      .keys(eventsList)
+      .map(key =>
+        <li key={key}>
+          <h2>{eventsList[key].name}</h2>
+          <p>{eventsList[key].date}</p>
+          <p>{eventsList[key].location}</p>
+          <p>{eventsList[key].description}</p>
+          <img src={eventsList[key].image} alt={eventsList[key].name}/>
+        </li>
+      )
 
     return (
       <ul className="Events">
-        {listEvents}
+        {eventItems}
       </ul>
     );
   }
