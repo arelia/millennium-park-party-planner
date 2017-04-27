@@ -12,7 +12,7 @@ class Events extends Component {
           <p>{eventsList[key].date}</p>
           <p>{eventsList[key].location}</p>
           <p>{eventsList[key].description}</p>
-          <img src={eventsList[key].image} alt={eventsList[key].name}/>
+          <img src={eventsList[key].image_url} alt={eventsList[key].name}/>
         </li>
       )
 
