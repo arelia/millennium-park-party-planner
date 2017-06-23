@@ -20,7 +20,7 @@ class EventsForm extends Component {
       endDate: this.endDate.value, // endDate = endDate || startDate and if endDate then multiday = true
       startTime: this.startTime.value,
       eventName: this.eventName.value,
-      eventType: this.eventType.value,
+      eventType: this.state.eventType,
       image_url: this.image_url.value,
       priority: this.priority.value,
       url: this.url.value,
@@ -54,7 +54,7 @@ class EventsForm extends Component {
           <input type="text" name="eventName" ref={(input) => this.eventName = input} />
         </label>
         <label htmlFor="eventType">Event Type
-          <select value={this.state.eventType} onChange={this.handleEventTypeChange}>
+          <select value={this.state.eventType} name="eventType" onChange={this.handleEventTypeChange}>
             <option value="music_series">Music Series</option>
             <option value="film_series">Film Series</option>
             <option value="festival">Festival</option>
