@@ -8,11 +8,14 @@ class Events extends Component {
       .keys(eventsList)
       .map(key =>
         <li key={key}>
-          <h2>{eventsList[key].name}</h2>
-          <p>{eventsList[key].date}</p>
-          <p>{eventsList[key].location}</p>
+          <h2>{eventsList[key].eventName}</h2>
+          <p>{eventsList[key].startDate}</p>
+          { eventsList[key].endDate ? <p>{eventsList[key].endDate}</p> : <p>{eventsList[key].startTime}</p> }
+          <p>{eventsList[key].eventType}</p>
+          <p>{eventsList[key].priority}</p>
           <p>{eventsList[key].description}</p>
           <img src={eventsList[key].image_url} alt={eventsList[key].name}/>
+          <a href={eventsList[key].url}>More Info</a>
         </li>
       )
 
