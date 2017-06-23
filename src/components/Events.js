@@ -12,7 +12,7 @@ class Events extends Component {
           <p>{eventsList[key].startDate}</p>
           { eventsList[key].endDate ? <p>{eventsList[key].endDate}</p> : <p>{eventsList[key].startTime}</p> }
           <p>{eventsList[key].eventType}</p>
-          <p>{eventsList[key].priority}</p>
+          { eventsList[key].priority ? <p>high priority</p> : <p>low priority</p>}
           <p>{eventsList[key].description}</p>
           <img src={eventsList[key].image_url} alt={eventsList[key].name}/>
           <a href={eventsList[key].url}>More Info</a>

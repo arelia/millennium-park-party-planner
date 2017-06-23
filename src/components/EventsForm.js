@@ -22,7 +22,7 @@ class EventsForm extends Component {
       eventName: this.eventName.value,
       eventType: this.state.eventType,
       image_url: this.image_url.value,
-      priority: this.priority.value,
+      priority: this.state.priority,
       url: this.url.value,
       description: this.description.value
     }
