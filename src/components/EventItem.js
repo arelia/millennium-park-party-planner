@@ -6,11 +6,17 @@ class EventItem extends Component {
     const eventInfo = this.props.eventInfo;
 
     let calendarEvent = {
-      title: 'Sample Event',
-      description: 'This is the sample event provided as an example only',
-      location: 'Portland, OR',
-      startTime: '2016-09-16T20:15:00-04:00',
-      endTime: '2016-09-16T21:45:00-04:00'
+      title: eventInfo.eventName,
+      description: `
+        Millennium Park ${eventInfo.eventType}
+        How likely is Arelia to go: ${ eventInfo.priority ? "She's definately going" : "She might not go"}
+        Additional Info:
+        ${eventInfo.url}
+        ${ eventInfo.description ? eventInfo.description : ''}
+      `,
+      location: 'Millennium Park',
+      startTime: eventInfo.startDate,
+      endTime: eventInfo.startDate // need to work out start/end date/time multiday/etc logic
     };
 
     return (
