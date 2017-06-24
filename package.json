@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "moment": "^2.18.1",
     "react": "^15.4.2",
+    "react-add-to-calendar": "^0.1.4",
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
