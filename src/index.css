@@ -26,7 +26,8 @@ body {
   margin: 20px; }
 
 .event-item.priority {
-  background: white; }
+  background: white;
+  border-color: #1ab3c1; }
 
 .event-item__image {
   width: 100%;
@@ -54,6 +55,8 @@ body {
     content: '\f0c1';
     font-family: 'FontAwesome';
     margin-right: 5px; }
+  .event-item__url:hover, .event-item__url:active, .event-item__url:focus {
+    text-decoration: underline; }
 
 .react-add-to-calendar {
   position: relative;
@@ -64,7 +67,11 @@ body {
 
 .react-add-to-calendar__button {
   border: 2px solid #86e6ee;
-  padding: 10px; }
+  padding: 10px;
+  cursor: pointer; }
+  .react-add-to-calendar__button:hover, .react-add-to-calendar__button:active, .react-add-to-calendar__button:focus {
+    border-color: #1ab3c1;
+    background-color: #86e6ee; }
 
 .react-add-to-calendar__dropdown {
   position: absolute;
