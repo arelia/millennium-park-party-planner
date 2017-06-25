@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import Events from './components/Events.js';
-import EventsForm from './components/EventsForm.js';
-import Header from './components/Header.js';
-import Sidebar from './components/Sidebar.js';
 import base from './base.js'
 
 class App extends Component {
@@ -13,7 +10,6 @@ class App extends Component {
     this.addEvent = this.addEvent.bind(this);
 
     this.state = {
-      displaySidebar: true,
       eventsList: {}
     };
   }
@@ -39,7 +35,6 @@ class App extends Component {
   }
 
   render() {
-    const displaySidebar = this.state.displaySidebar;
     const eventsList = this.state.eventsList;
 
     return (
