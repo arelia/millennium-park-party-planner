@@ -37,7 +37,7 @@ class EventItem extends Component {
     ];
 
     return (
-      <li className="event-item">
+      <li className={'event-item ' + (eventInfo.priority ? 'priority' : '')}>
         <div className="event-item__image" style={imageStyles}></div>
         <div className="event-item__text">
           <h2>
