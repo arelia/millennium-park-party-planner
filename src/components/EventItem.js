@@ -19,6 +19,16 @@ class EventItem extends Component {
       endTime: eventInfo.startDate // need to work out start/end date/time multiday/etc logic
     };
 
+    let icon = { 'calendar-plus-o': 'left' };
+
+    let items = [
+      { google: 'Google' },
+      { outlook: 'Outlook' },
+      { outlookcom: 'Outlook.com' },
+      { apple: 'Apple Calendar' },
+      { yahoo: 'Yahoo' }
+    ];
+
     return (
       <li>
         <h2>{eventInfo.eventName}</h2>
@@ -34,7 +44,7 @@ class EventItem extends Component {
         <p>{eventInfo.description}</p>
         <img src={eventInfo.image_url} alt={eventInfo.name}/>
         <a href={eventInfo.url}>More Info</a>
-        <AddToCalendar event={calendarEvent}/>
+        <AddToCalendar event={calendarEvent} buttonTemplate={icon} displayItemIcons={false} listItems={items} />
       </li>
     );
   }
