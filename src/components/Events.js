@@ -12,7 +12,7 @@ class Events extends Component {
       )
 
     return (
-      <ul className="Events">
+      <ul className="events">
         {eventItems}
       </ul>
     );

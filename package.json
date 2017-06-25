@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "moment": "^2.18.1",
+    "moment-timezone": "^0.5.13",
     "react": "^15.4.2",
     "react-add-to-calendar": "^0.1.4",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-moment": "^0.2.4"
   },
   "devDependencies": {
     "node-sass-chokidar": "0.0.3",

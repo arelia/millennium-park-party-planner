@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import AddToCalendar from 'react-add-to-calendar';
+import Moment from 'react-moment';
 
 class EventItem extends Component {
   render() {
     const eventInfo = this.props.eventInfo;
+
+    const imageStyles = {
+      backgroundImage: 'url(' + eventInfo.image_url + ')',
+    };
+
+    let startDate = eventInfo.startDate;
 
     let calendarEvent = {
       title: eventInfo.eventName,
@@ -30,21 +37,26 @@ class EventItem extends Component {
     ];
 
     return (
-      <li>
-        <h2>{eventInfo.eventName}</h2>
-        <p>{eventInfo.startDate}</p>
-        { eventInfo.endDate ? <p>{eventInfo.endDate}</p> : <p>{eventInfo.startTime}</p> }
+      <li className="event-item">
+        <div className="event-item__image" style={imageStyles}></div>
+        <div className="event-item__text">
+          <h2>
+            { eventInfo.eventType === 'film_series' ? <i className="event-type-icon fa fa-film" aria-hidden="true"></i> : null }
+            { eventInfo.eventType === 'music_series' ? <i className="event-type-icon fa fa-music" aria-hidden="true"></i> : null }
+            { eventInfo.eventType === 'event' ? <i className="event-type-icon fa fa-desktop" aria-hidden="true"></i> : null }
+            { eventInfo.eventType === 'festival' ? <i className="event-type-icon fa fa-users" aria-hidden="true"></i> : null }
 
-        { eventInfo.eventType === 'film_series' ? <i className="fa fa-film" aria-hidden="true"></i> : null }
-        { eventInfo.eventType === 'music_series' ? <i className="fa fa-music" aria-hidden="true"></i> : null }
-        { eventInfo.eventType === 'event' ? <i className="fa fa-desktop" aria-hidden="true"></i> : null }
-        { eventInfo.eventType === 'festival' ? <i className="fa fa-users" aria-hidden="true"></i> : null }
+            {eventInfo.eventName}
+          </h2>
+          <p className="event-item__date"><Moment format="dddd MMM D">{startDate}</Moment></p>
+          { eventInfo.endDate ? <p>{eventInfo.endDate}</p> : <p>{eventInfo.startTime}</p> }
 
-        { eventInfo.priority ? <p>high priority</p> : <p>low priority</p>}
-        <p>{eventInfo.description}</p>
-        <img src={eventInfo.image_url} alt={eventInfo.name}/>
-        <a href={eventInfo.url}>More Info</a>
-        <AddToCalendar event={calendarEvent} buttonTemplate={icon} displayItemIcons={false} listItems={items} />
+          { eventInfo.priority ? <p>high priority</p> : <p>low priority</p>}
+          <p>{eventInfo.description}</p>
+
+          <a href={eventInfo.url} className="event-item__url">More Info</a>
+          <AddToCalendar event={calendarEvent} buttonTemplate={icon} displayItemIcons={false} listItems={items} />
+        </div>
       </li>
     );
   }
