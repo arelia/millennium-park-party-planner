@@ -2,6 +2,7 @@
   "name": "millennium-park-party-planner",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://arelia.github.io/millennium-park-party-planner",
   "dependencies": {
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13",
@@ -11,6 +12,7 @@
     "react-moment": "^0.2.4"
   },
   "devDependencies": {
+    "gh-pages": "^1.0.0",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.0.2",
     "re-base": "^2.7.0",
@@ -23,6 +25,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
