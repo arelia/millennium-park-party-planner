@@ -49,7 +49,7 @@ class EventItem extends Component {
             {eventInfo.eventName}
           </h2>
           <p className="event-item__date"><Moment format="dddd MMM D">{startDate}</Moment></p>
-          { eventInfo.endDate ? <p>{eventInfo.endDate}</p> : <p>{eventInfo.startTime}</p> }
+          { eventInfo.endDate ? <p>Through {eventInfo.endDate}</p> : <p>Start Time: {eventInfo.startTime}</p> }
 
           { eventInfo.priority ? <p>high priority</p> : <p>low priority</p>}
           <p>{eventInfo.description}</p>
