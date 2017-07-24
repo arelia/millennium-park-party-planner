@@ -54,7 +54,7 @@ class EventItem extends Component {
           { eventInfo.priority ? <p>high priority</p> : <p>low priority</p>}
           <p>{eventInfo.description}</p>
 
-          <a href={eventInfo.url} className="event-item__url">More Info</a>
+          <a href={eventInfo.url} className="event-item__url" target="_blank">More Info</a>
           <AddToCalendar event={calendarEvent} buttonTemplate={icon} displayItemIcons={false} listItems={items} />
         </div>
       </li>
