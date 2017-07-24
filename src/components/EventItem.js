@@ -3,6 +3,18 @@ import AddToCalendar from 'react-add-to-calendar';
 import Moment from 'react-moment';
 
 class EventItem extends Component {
+  constructor(props){
+    super(props);
+    this.toggleRSVP = this.toggleRSVP.bind(this);
+    this.state = {
+      rsvp: false
+    };
+  }
+
+  toggleRSVP(e) {
+    this.setState(({ rsvp }) => ( { rsvp: !rsvp } ));
+  }
+
   render() {
     const eventInfo = this.props.eventInfo;
 
@@ -56,6 +68,9 @@ class EventItem extends Component {
 
           <a href={eventInfo.url} className="event-item__url" target="_blank">More Info</a>
           <AddToCalendar event={calendarEvent} buttonTemplate={icon} displayItemIcons={false} listItems={items} />
+          <label htmlFor="rsvp"> RSVP
+            <input type="checkbox" name="rsvp" checked={this.state.rsvp} onChange={this.toggleRSVP} ref={(input) => this.rsvp = input} />
+          </label>
         </div>
       </li>
     );
