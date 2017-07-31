@@ -5,6 +5,7 @@ var moment = require('moment');
 class Events extends Component {
   render() {
     const eventsList = this.props.eventsList;
+    const rsvpList = this.props.rsvpList;
 
     const eventItems = Object
       .keys(eventsList)
@@ -13,7 +14,7 @@ class Events extends Component {
         let eventDate = eventsList[key].endDate || eventsList[key].startDate;
         let displayEvent = moment(eventDate).isAfter(moment());
 
-        return displayEvent ? <EventItem key={key} eventInfo={eventsList[key]}/> : null
+        return displayEvent ? <EventItem key={key} eventInfo={eventsList[key]} rsvpList={this.rsvpList} /> : null
       })
 
     return (

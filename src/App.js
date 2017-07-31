@@ -8,9 +8,11 @@ class App extends Component {
     super(props);
 
     this.addEvent = this.addEvent.bind(this);
+    this.rsvpList = this.rsvpList.bind(this);
 
     this.state = {
-      eventsList: {}
+      eventsList: {},
+      rsvpList: {}
     };
   }
 
@@ -34,12 +36,20 @@ class App extends Component {
     this.setState({eventsList});
   }
 
+  rsvpList(rsvps, email) {
+    const rsvpList = {...this.state.rsvpList};
+
+    rsvpList[email] = rsvps;
+
+    this.setState({rsvpList});
+  }
+
   render() {
     const eventsList = this.state.eventsList;
 
     return (
       <div className="App">
-        <Events eventsList={eventsList} />
+        <Events eventsList={eventsList} rsvpList={this.rsvpList} />
       </div>
     );
   }

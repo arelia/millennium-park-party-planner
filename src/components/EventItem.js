@@ -17,6 +17,7 @@ class EventItem extends Component {
 
   render() {
     const eventInfo = this.props.eventInfo;
+    const rsvpList = this.props.rsvpList;
 
     const imageStyles = {
       backgroundImage: 'url(' + eventInfo.image_url + ')',
